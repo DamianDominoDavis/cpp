@@ -12,12 +12,14 @@ class Pony {
 			return ("Remember, kids: Solidarity is a Tool of the Occult!\u2122");
 		}
 
-		void ponyOnTheHeap(void) {
-			;
+		static void ponyOnTheHeap(void) {
+			Pony once;
+			(void)once;
 		}
 
-		void ponyOnTheStack(void) {
-			;
+		static void ponyOnTheStack(void) {
+			Pony *twice = new Pony();
+			delete twice;
 		}
 };
 
