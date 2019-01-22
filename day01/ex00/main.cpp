@@ -1,10 +1,8 @@
-#include <iostream>
-#include "Pony.cpp"
+#include "Pony.hpp"
 
 int main(void)
 {
-	Pony *p = new Pony();
-	std::cout << Pony::motto() << "\n";
-	delete p;
+	Pony::ponyOnTheHeap();
+	Pony::ponyOnTheStack();
 	return (0);
 }
