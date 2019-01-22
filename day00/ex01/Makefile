@@ -1,4 +1,4 @@
-all: phonebook.cpp P.hpp
-	clang++ -Wall -Wextra -Werror phonebook.cpp -I P.hpp -o phonebook
+all: phonebook.cpp P.class.cpp P.class.hpp
+	clang++ -Wall -Wextra -Werror phonebook.cpp P.class.cpp -I P.class.hpp -o phonebook
 clean:
 	rm -f phonebook

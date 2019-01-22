@@ -3,7 +3,7 @@
 int main(int c, char **v)
 {
 	if (c > 1)
-		for (int w = 1; v[w]; w++)
+		for (int w = 1; w < c; w++)
 		{
 			for (int l = 0; v[w][l]; l++)
 				if (v[w][l] >= 'a' && v[w][l] <= 'z')
@@ -12,6 +12,6 @@ int main(int c, char **v)
 		}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << '\n';
+	std::cout << std::endl;
 	return (0);
 }
