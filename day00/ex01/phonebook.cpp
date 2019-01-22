@@ -1,8 +1,6 @@
+#include <string>
+#include <iostream>
 #include "P.class.hpp"
-
-const std::string P::prompts[] = {"firstname", "lastname", "nickname", "login",
-	"postal address", "email address", "phone number", "birthday date",
-	"favorite meal", "underwear color", "darkest secret"};
 
 int main(void) {
 	int i = 0;
@@ -17,10 +15,11 @@ int main(void) {
 			P p;
 			for (int j = 0; j < 11; j++) {
 				std::cout << "  ADD " << P::prompts[j] << ": ";
-				std::getline(std::cin, p.fields[j]);
+				std::getline(std::cin, take);
+				p.setfield(j, take);
 			}
-			std::cout << "  Added " << p.fields[0] << " " << p.fields[1]
-				<< " (" << p.fields[2] << ")" << std::endl;
+			std::cout << "  Added " << p.getfield(0) << " " << p.getfield(1)
+				<< " (" << p.getfield(2) << ")" << std::endl;
 			P::names[i] = p;
 			++i %= 8;
 		}
@@ -28,7 +27,7 @@ int main(void) {
 			std::cout << "     index|first name| last name|  nickname"
 				<< std::endl;
 			for (int j = 0; j < 8; j++) {
-				if (P::names[j].fields[0].length() > 0) {
+				if (P::names[j].getfield(0).length() > 0) {
 					std::cout << "         " << j << "|";
 					P::names[j].searchreport();
 				}
