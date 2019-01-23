@@ -1,36 +1,27 @@
 #include <string>
 #include <iostream>
 
-
-
 class Brain {
 	public:
-		Brain& identify(void);
+		const Brain* identify(void) const;
 };
-
-Brain& Brain::identify(void) {
+const Brain* Brain::identify(void) const {
 	return (this);
 }
 
-
-
 class Human : public Brain {
 	private:
-		Brain mybrain;
+		Brain const mybrain;
 	public:
-		Brain* identify(void);
-		Brain getBrain(void);
+		const Brain* identify(void) const;
+		Brain getBrain(void) const;
 };
-
-Brain* Human::identify(void) {
-	return (&mybrain.identify());
+const Brain* Human::identify(void) const {
+	return (mybrain.identify());
 }
-
-Brain Human::getBrain(void) {
+Brain Human::getBrain(void) const {
 	return (mybrain);
 }
-
-
 
 int main()
 {
@@ -38,3 +29,15 @@ int main()
 	std::cout << bob.identify() << std::endl;
 	std::cout << bob.getBrain().identify() << std::endl;
 }
+
+// Produces:
+// 0x7ffee8d06419
+// 0x7ffee8d06410
+// >:(
+
+// Filthy cheat:
+// std::string Brain::identify(void) const {
+// 	std::stringstream ss;
+// 	ss << (const void*)this;
+// 	return ("0x" + ss.str());
+// }
