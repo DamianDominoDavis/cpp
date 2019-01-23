@@ -1,4 +1,4 @@
-NAME = zombieevent
+NAME = zombiehorde
 
 all:
 	clang++ *.cpp -I. -o $(NAME)
