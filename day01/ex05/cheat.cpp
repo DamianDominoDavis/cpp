@@ -1,22 +1,25 @@
 #include <string>
+#include <sstream>
 #include <iostream>
 
 class Brain {
 	public:
-		const Brain* identify(void) const;
+		std::string identify(void) const;
 };
-const Brain* Brain::identify(void) const {
-	return (this);
+std::string Brain::identify(void) const {
+	std::stringstream ss;
+	ss << (const void*)this;
+	return ("0x" + ss.str());
 }
 
 class Human : public Brain {
 	private:
 		Brain const mybrain;
 	public:
-		const Brain* identify(void) const;
+		std::string identify(void) const;
 		Brain getBrain(void) const;
 };
-const Brain* Human::identify(void) const {
+std::string Human::identify(void) const {
 	return (mybrain.identify());
 }
 Brain Human::getBrain(void) const {
@@ -31,6 +34,6 @@ int main()
 }
 
 // Produces:
-// 0x7ffee8d06419
-// 0x7ffee8d06410
+// 0x0x7ffee2cad419
+// 0x0x7ffee2cad3d0
 // >:(
