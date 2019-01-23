@@ -1,3 +1,5 @@
+# include <string>
+# include <iostream>
 #include "Pony.hpp"
 
 Pony::Pony(void) {
@@ -6,7 +8,7 @@ Pony::Pony(void) {
 
 Pony::~Pony(void) {
 	std::cout << "\"Remember, kids: Solidarity is a Tool of the Occult!\""
-	<< "\u2122" << std::endl;
+		<< "\u2122" << std::endl;
 }
 
 void Pony::ponyOnTheHeap(void) {
@@ -15,6 +17,6 @@ void Pony::ponyOnTheHeap(void) {
 }
 
 void Pony::ponyOnTheStack(void) {
-	Pony *twice = new Pony();
+	Pony* twice = new Pony();
 	delete twice;
 }

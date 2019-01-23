@@ -7,15 +7,9 @@ const std::string Zombie::names[] = {"bastian", "bediah", "bert", "ddeus",
 const std::string Zombie::types[] = {"ghuol", "lhic", "skleleton", "zmobie",
 	"zobmie"};
 
-Zombie::Zombie(std::string n, std::string t) {
-	this->name = n;
-	this->type = t;
-	this->announce();
-}
-
 Zombie::Zombie(void) {
-	this->name = rname();
-	this->type = rtype();
+	name = rname();
+	type = rtype();
 }
 
 void Zombie::announce(void) {

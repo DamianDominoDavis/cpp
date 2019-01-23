@@ -12,7 +12,6 @@ class Zombie {
 		static const std::string types[];
 		static std::string rtype(void);
 		static std::string rname(void);
-		Zombie(std::string n, std::string t);
 		Zombie(void);
 		void announce(void);
 };

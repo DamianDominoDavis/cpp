@@ -13,7 +13,7 @@ class Zombie {
 		static std::string rtype(void);
 		static std::string rname(void);
 		Zombie(std::string n, std::string t);
-		void announce(void);
+		void announce(void) const;
 };
 
 #endif

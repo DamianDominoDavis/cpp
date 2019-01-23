@@ -1,4 +1,5 @@
-all: main.cpp Pony.cpp Pony.hpp
-	clang++ -Wall -Wextra -Werror Pony.cpp main.cpp -I Pony.hpp -o pony
+NAME = pony
+all:
+	clang++ -Wall -Wextra -Werror -std=c++98 *.cpp -I. -o $(NAME)
 clean:
-	rm -f pony
+	rm -f $(NAME)

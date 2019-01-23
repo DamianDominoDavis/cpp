@@ -1,6 +1,5 @@
 NAME = zombiehorde
-
 all:
-	clang++ *.cpp -I. -o $(NAME)
+	clang++ -Wall -Wextra -Werror -std=c++98 *.cpp -I. -o $(NAME)
 clean:
 	rm -f $(NAME)
