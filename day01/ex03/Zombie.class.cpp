@@ -19,13 +19,22 @@ Zombie::Zombie(void) {
 }
 
 void Zombie::announce(void) {
-	std::cout << "(" << name << " <" << type << ">) announce" << std::endl;
+	std::cout << name << " <" << type << ">: Gr";
+	while (rand() % 2)
+		std::cout << "r";
+	while (rand() % 3)
+		std::cout << "a";
+	while (rand() % 2)
+		std::cout << "h";
+	while (rand() % 2)
+		std::cout << "r";
+	std::cout << std::endl;
 }
 
 std::string Zombie::rname(void) {
-	return (names[std::rand() % (sizeof(names) / sizeof(names[0]))]);
+	return (names[rand() % (sizeof(names) / sizeof(names[0]))]);
 }
 
 std::string Zombie::rtype(void) {
-	return (types[std::rand() % (sizeof(types) / sizeof(types[0]))]);
+	return (types[rand() % (sizeof(types) / sizeof(types[0]))]);
 }
