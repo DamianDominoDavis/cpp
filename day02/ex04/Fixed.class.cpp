@@ -2,7 +2,10 @@
 #include <iostream>
 #include <cmath>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4ad56b74fd7b019472b40effc2995309ed75fa15
 const int Fixed::bits = 8;
 
 // de/constructors

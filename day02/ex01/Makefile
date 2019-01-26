@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -39,3 +40,10 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean all
+=======
+NAME = fixed
+all:
+	clang++ -Wall -Wextra -Werror -std=c++98 *.cpp -I. -o $(NAME)
+clean:
+	rm -f $(NAME)
+>>>>>>> 4ad56b74fd7b019472b40effc2995309ed75fa15

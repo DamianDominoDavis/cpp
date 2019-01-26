@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -14,6 +15,8 @@
 #include <iostream>
 #include <string>
 
+=======
+>>>>>>> 4ad56b74fd7b019472b40effc2995309ed75fa15
 int	find_first(std::string expr, char op)
 {
 	int	brackets = 0;

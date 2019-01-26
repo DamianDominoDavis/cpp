@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -12,6 +13,10 @@
 
 #include "Fixed.class.hpp"
 #include <iostream>
+=======
+#include <iostream>
+#include "Fixed.class.hpp"
+>>>>>>> 4ad56b74fd7b019472b40effc2995309ed75fa15
 
 int main( void )
 {
