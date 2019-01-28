@@ -5,6 +5,7 @@ Game::Game() : _score(0), _bestScore(0) {
 	initscr();
 	noecho();
 	curs_set(0);
+    start_color();
     init_pair(1, COLOR_RED, COLOR_BLACK);
     init_pair(2, COLOR_CYAN, COLOR_BLACK);
     init_pair(3, 24, COLOR_BLACK);
@@ -22,7 +23,6 @@ Game::Game() : _score(0), _bestScore(0) {
 	mvwprintw(_w, HEIGHT - 2, WIDTH / 2, "^");
 	enemies = new Foe[HEIGHT];
 	tick();
-    start_color();
 }
 Game::Game(const Game &g) {
 	*this = g;
