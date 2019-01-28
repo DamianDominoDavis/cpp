@@ -10,8 +10,8 @@ Entity& Entity::operator=(Entity const &e) {
 	return (*this);
 }
 
-int		Entity::get_x() const { return (_x); }
-int		Entity::get_y() const { return (_y); }
+int		Entity::get_x(void) const { return (_x); }
+int		Entity::get_y(void) const { return (_y); }
 
 void        Entity::mvleft(WINDOW *w, char c) {
 	mvwprintw(w, _y, _x, " ");

@@ -13,10 +13,10 @@ public:
 	Player &operator=(Player const & rfs);
 
 	void 	setHP(int point);
-	int		getHP() const;
+	int		getHP(void) const;
 	void	shoot(int map[HEIGHT][WIDTH]);
 	int		update(WINDOW *w, char c, int map[HEIGHT][WIDTH]);
-	void	takeDamage();
+	void	takeDamage(void);
 };
 
 #endif

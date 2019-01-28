@@ -12,7 +12,7 @@ private:
 	WINDOW		*_w;
 	WINDOW		*_s;
 	int 		_score;
-	int 		_bestScore;
+	int 		_hiscore;
 	Player		*player;
 	Foe			*enemies;
 	int			map[HEIGHT][WIDTH];
@@ -23,7 +23,7 @@ private:
 	void		fillChars(char arr[HEIGHT][WIDTH], char c);
 	void		doBullets(void);
 	void		restart(void);
-	void		fly(void);
+	void		doStars(void);
 public:
 	Game(void);
 	Game(Game const &copy);

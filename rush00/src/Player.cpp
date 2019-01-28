@@ -15,7 +15,7 @@ Player &Player::operator=(Player const &rfs) {
 	return (*this);
 }
 
-int		Player::getHP() const { return (_health); }
+int		Player::getHP(void) const { return (_health); }
 void 	Player::setHP(int point) {
 	_health = point;
 	_x = WIDTH / 2;
