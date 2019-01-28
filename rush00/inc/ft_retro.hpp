@@ -8,7 +8,12 @@
 #include <ncurses.h>
 #include <unistd.h>
 
-#define HEIGHT 40
-#define WIDTH 80
+# define HEIGHT 40
+# define WIDTH 80
+# define DUDE '@'
+# define SHIP_STR "M"
+# define SHIP_CHR 'M'
+# define BULLET ":"
+# define STAR '.'
 
 #endif

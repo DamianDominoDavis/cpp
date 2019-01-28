@@ -20,7 +20,7 @@ Game::Game() : _score(0), _bestScore(0) {
 	fillChars(bg, ' ');
 	fillInts(map, 0);
 	player = new Player(HEIGHT - 2, WIDTH / 2);
-	mvwprintw(_w, HEIGHT - 2, WIDTH / 2, "^");
+	mvwprintw(_w, HEIGHT - 2, WIDTH / 2, SHIP_STR);
 	enemies = new Foe[HEIGHT];
 	tick();
 }
@@ -56,7 +56,7 @@ void	Game::doBullets() {
 				mvwprintw(_w, i + 1, j, " ");
 				map[i][j] = map[i + 1][j];
 				map[i + 1][j] = 0;
-				mvwprintw(_w, i, j, "|");
+				mvwprintw(_w, i, j, BULLET);
 			}
 		}
 	}
@@ -74,16 +74,16 @@ void			Game::tick(void) {
 	mvwprintw(_w, 0, 0, "%s", bg);
     wattroff(_w, COLOR_PAIR(3));
 	doBullets();
-	player->update(_w, '^', map);
+	player->update(_w, SHIP_CHR, map);
 	for (int i = 0; i < HEIGHT; ++i)
-		_score += enemies[i].update(_w, '*', map);
+		_score += enemies[i].update(_w, DUDE, map);
 	box(_w, 0, 0);
 	wrefresh(_w);
-	mvwprintw(_s, 1, 1, "lives: %i", player->getHP());
-	mvwprintw(_s, 2, 1, "score: %i", _score);
+	mvwprintw(_s, 1, 1, "HP: %i", player->getHP());
+	mvwprintw(_s, 2, 1, "%i", _score);
 	if (_score > _bestScore)
 		_bestScore = _score;
-	mvwprintw(_s, 3, 1, "Best score: %i", _bestScore);
+	mvwprintw(_s, 3, 1, "Top: %i", _bestScore);
 	box(_s, 0, 0);
 	wrefresh(_s);
 }
@@ -92,16 +92,16 @@ int			Game::input() {
 	int c = 0;
 	switch ((c = wgetch(_w))) {
 		case KEY_LEFT:
-			player->mvleft(_w, '^');
+			player->mvleft(_w, SHIP_CHR);
 			break;
 		case KEY_RIGHT:
-			player->mvright(_w, '^');
+			player->mvright(_w, SHIP_CHR);
 			break;
 		case KEY_UP:
-			player->mvup(_w, '^');
+			player->mvup(_w, SHIP_CHR);
 			break;
 		case KEY_DOWN:
-			player->mvdown(_w, '^');
+			player->mvdown(_w, SHIP_CHR);
 			break;
 		case 32:
 			player->shoot(map);
@@ -160,5 +160,5 @@ void	Game::fly(void) {
 			if (i != 0)
 				bg[i][j] = bg[i - 1][j];
 	for (int i = 0; i < WIDTH; ++i)
-		bg[0][i] = (rand() % 50 == 0) ? '.' : ' ';
+		bg[0][i] = (rand() % 50 == 0) ? STAR : ' ';
 }

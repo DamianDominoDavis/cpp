@@ -4,7 +4,7 @@
 
 class Player : public Entity {
 private:
-	int 	lives_point;
+	int 	_health;
 public:
 	Player(void);
 	Player(int y, int x);

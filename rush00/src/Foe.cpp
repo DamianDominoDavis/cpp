@@ -20,7 +20,7 @@ void Foe::descend(WINDOW *_w) {
 			mvwprintw(_w, _y, _x, " ");
 			_x %= WIDTH - 2;
             _y %= HEIGHT - 2;
-            mvwprintw(_w, ++_y, ++_x, "%c", '*');
+            mvwprintw(_w, ++_y, ++_x, "%c", DUDE);
         }
         else {
             mvwprintw(_w, _y, _x--, " ");
@@ -28,7 +28,7 @@ void Foe::descend(WINDOW *_w) {
             if (_x < 1)
                 _x += WIDTH - 2;
             _y %= HEIGHT - 2;
-            mvwprintw(_w, ++_y, _x, "%c", '*');
+            mvwprintw(_w, ++_y, _x, "%c", DUDE);
         }
 		if (_y == HEIGHT)
 			die(_w);
