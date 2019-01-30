@@ -1,6 +1,6 @@
 #include "Foe.hpp"
 
-Foe::Foe() {
+Foe::Foe(void) {
 	respawn();
 }
 Foe::Foe(const Foe &f) {
@@ -11,7 +11,7 @@ Foe &Foe::operator=(const Foe &f) {
  	_y = f.get_y();
  	return *this;
 }
-Foe::~Foe() {}
+Foe::~Foe(void) {}
 
 void Foe::descend(WINDOW *_w) {
 	static int ticktock;
