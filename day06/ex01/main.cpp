@@ -22,8 +22,9 @@ Data *deserialize(void *raw) { return static_cast<Data*>(raw); }
 int main() {
 	srand(time(0));
 	void *raw = serialize();
-	std::cout << "cereal: " << raw << std::endl;
+	std::cout << "breakfast cereal: " << raw << std::endl;
 	Data *d = deserialize(raw);
-	std::cout << "d-cereal: \"" << d->s1 << "\" " << d->n << " \""
+	std::cout << "breakfast decereal: \"" << d->s1 << "\" " << d->n << " \""
 		<< d->s2 << "\"" << std::endl;
+	std::cout << sizeof(*d) << " bytes" << std::endl;
 }
