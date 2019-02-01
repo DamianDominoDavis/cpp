@@ -13,20 +13,21 @@ void identify_from_pointer(Base *b) {
 }
 
 void identify_from_reference(Base &b) {
+	Base tmp;
 	try {
-		(void)dynamic_cast<A&>(b);
+		tmp = dynamic_cast<A&>(b);
 		std::cout << "A" << std::endl;
 		return;
 	}
 	catch (std::bad_cast &e) {}
 	try {
-		(void)dynamic_cast<B&>(b);
+		tmp = dynamic_cast<B&>(b);
 		std::cout << "B" << std::endl;
 		return;
 	}
 	catch (std::bad_cast &e) {}
 	try {
-		(void)dynamic_cast<C&>(b);
+		tmp = dynamic_cast<C&>(b);
 		std::cout << "C" << std::endl;
 		return;
 	}

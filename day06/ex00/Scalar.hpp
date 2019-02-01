@@ -29,11 +29,6 @@ public:
 	std::string toIntString(void);
 	std::string toFloatString(void);
 	std::string toDoubleString(void);
-
-	operator char(void);
-	operator int(void);
-	operator float(void);
-	operator double(void);
 };
 
 std::ostream &operator<<(std::ostream&, Scalar&);

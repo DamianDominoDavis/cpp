@@ -41,11 +41,6 @@ std::string	Scalar::toIntString()	{ return _strint; }
 std::string	Scalar::toFloatString()	{ return _strfloat; }
 std::string	Scalar::toDoubleString(){ return _strdouble; }
 
-Scalar::operator char()				{ return static_cast<char>(_asint); }
-Scalar::operator int()				{ return static_cast<int>(_asint); }
-Scalar::operator float()			{ return static_cast<float>(_asfloat); }
-Scalar::operator double()			{ return static_cast<double>(_asfloat); }
-
 std::ostream &operator<<(std::ostream &out, Scalar &sin) {
 	std::string str;
 	if (sin.toString() == "nan" || sin.toInt() > 126)
@@ -53,8 +48,8 @@ std::ostream &operator<<(std::ostream &out, Scalar &sin) {
 	else if (!sin.toChar()) 
 		str = "char: unprintable";
 	else
-		str = "char: ";
-	return (out << str << sin.toChar() << std::endl
+		str = "char: \'";
+	return (out << str << sin.toChar() << "\'" << std::endl
 		<< sin.toIntString() << std::endl
 		<< sin.toFloatString() << std::endl
 		<< sin.toDoubleString() << std::endl);
